@@ -50,6 +50,8 @@ https://pint.readthedocs.io/en/stable/
 
 I also find it's helpful to explicitly label units in your variables when programming engineering calculations. For example, you can use camel-case for the variable name but then indicate units following an underscore. With this approach, integer values can be used to indicate power and the letter `p` (for "per") to indicate a ratio of "before" divided by "after". `speedOfLight_mps`, for example, might store the speed of light in meters per second, whereas `speedOfLight_miphr` might store the speed of light in miles per hour (`mph` would also be acceptable but introduces some ambiguity; I tend to reserve single-letter abbreviations for Base SI, when possible).
 
+I also find it's help to always store internal values as Base SI units, and convert only at the "edge" (program interface or visual presentation). This helps simplify assumptions and minimize misunderstandings during development activities, as well as making it explicit when defining interface requirements.
+
 ## Imperial and Other Edge Cases
 
 While Base SI gives us a great tool to define a "core" of unit dimensions that we can use for converting to and from other systems, those other systems can come with a lot of edge cases. Imperial is the easy one to blame of course (and we'll start there)--but there are some other tricky areas, too.
